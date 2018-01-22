@@ -10,6 +10,7 @@ def giveme(message, something):
     # debug
     # message.reply('{}'.format(something))
 
-    # ここでhomeを呼ぶ
-    os.system('ls -l')
-    os.system('/home/pi/home-voice/git/say.sh ' + get_msg)
+    # call say.sh
+    cmd = '/home/pi/home-voice/git/say.sh "' + get_msg + '"'
+    os.system(cmd)
+
