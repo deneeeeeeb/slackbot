@@ -3,14 +3,20 @@ from slackbot.bot import listen_to
 import re
 import os
 
-@respond_to('(.*)')
-def giveme(message, something):
-    get_msg = '{}'.format(something)
+
+@listen_to('.*')
+def mention_func(message):
 
     # debug
-    # message.reply('{}'.format(something))
+    # print(dir(message))
+    # print(message.body)
+    # print(message.body['text'])
+    # message.reply(message.body['text']) 
+
 
     # call say.sh
-    cmd = '/home/pi/home-voice/git/say.sh "' + get_msg + '"'
+    cmd = '/home/pi/home-voice/git/say.sh "' + message.body['text'] + '"'
+    print(cmd)
     os.system(cmd)
+
 
