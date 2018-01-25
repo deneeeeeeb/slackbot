@@ -1,4 +1,4 @@
-#! /home/pi/.pyenv/shims/python
+#! /home/pi/.pyenv/shims/python -u
 # coding: utf-8
 
 from slackbot.bot import Bot
